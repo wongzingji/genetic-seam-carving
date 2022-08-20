@@ -1,5 +1,5 @@
 # genetic-seam-carving
-Original image | Resizing using Backward Energy | Resizing Forward Energy
+Original image | Resized image (Backward Energy) | Resized image (Forward Energy)
 ----- | ----------------------------- | ----------------------------
 ![](input/bench.jpg) | ![](output/backward_bench.jpg) | ![](output/forward_bench.jpg)
 
