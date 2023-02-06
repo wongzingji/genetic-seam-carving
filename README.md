@@ -1,43 +1,41 @@
-#### Genetic seam carving
+## Algorithms
+### Genetic Seam Carving
+Seam Carving is in the discrete formulation, where connected paths of pixels across an image are proposed to be re-
+moved to minimize distortions [Avidan and Shamir 2007]. Genetic algorithm is applied due to the large search space.
 
-##### algorithm
+#### Files
+- gsc.py
+  - Based on https://github.com/EvanLavender13/genetic-seam-carving/blob/master/carve.py
+  - Reorganize the code, to modularize the following functions
+    - The population in each generation (new_generation)
+    - The seam to be carved in each step
+  - Add in horizontal seam carving 
 
-GA
+- multi_gsc.py
+  - A new try of carving multiple pixels each row / column to make the algorithm non-greedy (i.e. global optimum)
+  - Relax the sequential condition (while the result is not very good due to this)
+  - Problem
+    - Need to calculate #pixels carved each time to exactly reach the desired image size
+    - There's glitch in the result since we loose the sequential condition
 
+- operations.py
+  - GA operators
+    - Selection and variations (mutation & crossover) based on ) [Oliveira et al . 2015; Oliveira and Neto 2015]
+    - Fitness function based on [Lavender 2019]
 
+- vis.py
+  - For visualization when performing the carving
 
-##### based on
+### TODO
+- [ ] Try EMA-ES
 
-https://github.com/EvanLavender13/genetic-seam-carving/blob/master/carve.py
+### Image Warping
 
+## Reference
+[1] Saulo AF Oliveira, Francisco N Bezerra, and Ajalmar R Rocha Neto. 2015. Genetic seam carving: A genetic algorithm approach for content-aware image retargeting. In Iberian Conference on Pattern Recognition and Image Analysis. Springer, 700–707.
 
+[2] Saulo AF Oliveira and Ajalmar R Rocha Neto. 2015. An improved genetic algorithms-based seam carving method. In 2015 Latin America Congress on Computational Intelligence (LA-CCI). IEEE, 1–6.
 
-##### modification
+[3] Evan Lavender. 2019. genetic-seam-carving. https://github.com/EvanLavender13/genetic-seam-carving.
 
-- 重新组织了下代码，把以下功能模块化：
-  - determine the population in each generation (`new_generation`)
-  - determine the seams need to be carved in each step
-
-- 原来的代码只包含vertical seam，加入了horizontal seam carving
-
-
-
-##### TODO
-
-- multi-seam carving
-
-  改了一半，代码执行起来还有问题（目前hyperparameter中只能取`n=1`），原因见`problem`
-
-- 看其他文献修改GA中的设定
-
-- 看能不能利用现成的库，eg. DEAP, CMA-ES
-
-
-
-##### problem
-
-- multi-seam carving
-  - each step carve多条，也许不能exactly达到想要的image size
-  - 选择的多条seam可能会有pixel重合
-  - 效果也许不好 -- once at a time是取每次最好的，multi是取每次top n好的
-
+[4] Shai Avidan and Ariel Shamir. 2007. Seam carving for content-aware image resizing. In ACM SIGGRAPH 2007 papers. 10–es.
