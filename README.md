@@ -3,6 +3,8 @@
 Seam Carving is in the discrete formulation, where connected paths of pixels across an image are proposed to be re-
 moved to minimize distortions [Avidan and Shamir 2007]. Genetic algorithm is applied due to the large search space.
 
+<img src="https://github.com/wongzingji/image_resizing/blob/master/images/visualize_seams.jpg" width="300" height="300">
+
 #### Files
 - gsc.py
   - Based on https://github.com/EvanLavender13/genetic-seam-carving/blob/master/carve.py
@@ -26,7 +28,7 @@ moved to minimize distortions [Avidan and Shamir 2007]. Genetic algorithm is app
 - vis.py
   - For visualization when performing the carving
 
-### TODO
+#### TODO
 - [ ] Try EMA-ES
 
 ### Image Warping
