@@ -1,7 +1,6 @@
 ## Algorithms
 ### Genetic Seam Carving (discrete method)
-Seam Carving is in the discrete formulation, where connected paths of pixels across an image are proposed to be re-
-moved to minimize distortions [Avidan and Shamir 2007]. Genetic algorithm is applied due to the large search space.
+Seam Carving is in the discrete formulation, where connected paths of pixels across an image are proposed to be removed to minimize distortions [Avidan and Shamir 2007]. Genetic algorithm is applied due to the large search space.
 
 <img src="https://github.com/wongzingji/image_resizing/blob/master/images/visualize_seams.jpg" width="300" height="300">
 
